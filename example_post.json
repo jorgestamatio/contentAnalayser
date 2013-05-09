@@ -1,0 +1,96 @@
+{
+   "id": "143694099006529_544558688920066",
+   "from": {
+      "id": "143694099006529",
+      "category": "Media/news/publishing",
+      "name": "NZZ Neue Z\u00fcrcher Zeitung"
+   },
+   "message": "\u00abUrban Gardening\u00bb ist seit einigen Jahren der ganz grosse Trend: Eine neue Generation von Stadtmenschen will in ihren Wohngebieten Gem\u00fcse anpflanzen und ernten. Der Ruf nach staatlicher F\u00f6rderung der Stadtg\u00e4rten ert\u00f6nt auch in vielen Schweizer St\u00e4dten. Zum Artikel geht es hier:http://bit.ly/103Ec47",
+   "picture": "https://fbcdn-vthumb-a.akamaihd.net/hvthumb-ak-prn1/632207_544558825586719_544558688920066_8737_1089_b.jpg",
+   "link": "https://www.facebook.com/photo.php?v=544558688920066",
+   "source": "https://fbcdn-video-a.akamaihd.net/hvideo-ak-frc1/v/722258_544558792253389_249815917_n.mp4?oh=4352793994185e32c25bdf10ced2b100&oe=518CBCD4&__gda__=1368208316_258057003ab62ac4a1f62dfc0a603fb5",
+   "name": "May 2, 2013 3:31pm",
+   "properties": [
+      {
+         "name": "Length",
+         "text": "0:20"
+      }
+   ],
+   "icon": "https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/DggDhA4z4tO.gif",
+   "actions": [
+      {
+         "name": "Comment",
+         "link": "https://www.facebook.com/143694099006529/posts/544558688920066"
+      },
+      {
+         "name": "Like",
+         "link": "https://www.facebook.com/143694099006529/posts/544558688920066"
+      }
+   ],
+   "privacy": {
+      "value": ""
+   },
+   "type": "video",
+   "status_type": "added_video",
+   "object_id": "544558688920066",
+   "application": {
+      "name": "Video",
+      "namespace": "video",
+      "id": "2392950137"
+   },
+   "created_time": "2013-05-02T13:31:35+0000",
+   "updated_time": "2013-05-02T20:50:32+0000",
+   "shares": {
+      "count": 19
+   },
+   "likes": {
+      "data": [
+         {
+            "name": "Bruno Fischer",
+            "id": "652238238"
+         },
+         {
+            "name": "Lukas Mayer",
+            "id": "1114518414"
+         },
+         {
+            "name": "Ben Wenusch",
+            "id": "1590464313"
+         },
+         {
+            "name": "Kerstin Irene Brunner",
+            "id": "543521066"
+         }
+      ],
+      "count": 61
+   },
+   "comments": {
+      "data": [
+         {
+            "id": "143694099006529_544558688920066_5994802",
+            "from": {
+               "id": "135184353166136",
+               "category": "Retail and consumer merchandise",
+               "name": "***rrrevolve - equipment for a smarter living***"
+            },
+            "message": "findi super!",
+            "created_time": "2013-05-02T13:56:50+0000",
+            "likes": 1
+         },
+         {
+            "id": "143694099006529_544558688920066_5995730",
+            "from": {
+               "id": "209088342439610",
+               "category": "Community",
+               "name": "Working Mama"
+            },
+            "message": "Meine Nachbarinnen und ich haben die Blumenbeete im Gemeinschaftsgarten mit Gem\u00fcsen und Beeren bepflanzt. Das Ganze gibt zwar mehr Arbeit als die Blumen, aber die Samstage im Beet sind f\u00fcr Gross und Klein zu einem Treffpunkt geworden, den ich nicht missen m\u00f6chte.",
+            "created_time": "2013-05-02T20:50:32+0000",
+            "likes": 1
+         }
+      ],
+      "count": 2
+   }
+}
+
+
