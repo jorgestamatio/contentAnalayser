@@ -3,14 +3,23 @@
     
 
     <div id="search" class='container'>
-        <form class="form-inline">
-            <input type="hidden" id='token' name='token' value='<?php echo $access_token; ?>'>
-            <input type="text" id='page' class="input span9" placeholder="facebook page e.g.: nzz, blick...">
-            <button id='getAnalysis' class="btn btn-large btn-info pull-right">Get analysis!</button>
-        </form>
+        <div class="row">
+            <form class="form-inline">
+                <input type="hidden" id='token' name='token' value='<?php echo $access_token; ?>'>
+                <input type="text" id='page' class="input span9" placeholder="facebook page e.g.: nzz, blick...">
+                <button id='getAnalysis' class="btn span3 btn-info pull-right">Get analysis!</button>
+            </form>
+        </div>
     </div>
     
-    <div id='loading' class='hide'><h3>Loading...</h3></div>
+    <div id='loading' class='hide'>
+        <div class="overlay">
+            <h3 class='loadingText'>Loading...</h3>
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 0%;"></div>
+            </div>
+        </div>
+    </div>
 
         <div id="analysis">
         

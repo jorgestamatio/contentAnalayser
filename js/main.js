@@ -1,35 +1,74 @@
-  $(document).ready(new function() {
-      // This filter is later used as the selector for which grid items to show.
-      var loading = $('#loading');
-      var search = $('#search');
+$(document).ready(new function() {
 
-      // Capture filter click events.
-      $('#getAnalysis').click(function(e){
-        e.preventDefault();
-          var page = $('#page').val();
-          var token = $('#token').val();
-          $('#analysis').slideUp();
-          search.hide();
-          loading.show();
-          var dataString = 'page=' + page + '&tk=' + token;
-            $.ajax({
-                type: "POST",
-                data: dataString,
-                url: "get_analysis.php",
-                success: function (data) {
-                    $('#analysis').html(data);
-                    $('#analysis').slideDown();
-                    loading.hide();
-                    search.show();
-                  }
-        
-            }); //ajax drop    
-          
-      });
+  var loading = $('#loading'),
+      search = $('#search'),
+      analysis = $('#analysis'),
+      postIds = [],
+      countIds = 0;
+      
+// Capture filter click events.
+$('#getAnalysis').click(function(e){
+  e.preventDefault();
+  showLoading();
+  var page = $('#page').val(),
+      token = $('#token').val(),
+      url = "https://graph.facebook.com/"+page+"/posts?access_token="+token+"";
 
-     
-
-
-
+  getIds(url);
 
 });
+
+
+function getIds (url) {
+  $.get(
+    url,
+    function(data) {
+      parseIds(data);
+    }              
+  );
+}
+
+     
+function parseIds(json){
+  $.each(json.data, function(i, post){
+    postIds.push(post.id);
+  });
+
+  countIds = postIds.length;
+  console.log(postIds);
+  setProgress(countIds);
+  if(countIds <= 100){
+    var nextPage = json.paging.next;
+    getIds(nextPage);
+  }else{
+    done();
+  }
+}
+
+
+
+
+
+function setProgress(percent){
+    $('.progress .bar').width(percent+'%');
+}
+
+function showLoading(){
+  search.hide();
+  loading.show();
+  analysis.slideUp();
+}
+
+function done(){
+  for (var i = 0; i < postIds.length; i++) {
+    analysis.append('<li>'+postIds[i]+'</li>');
+  }
+  loading.hide();
+  search.show();
+  analysis.slideDown();
+
+}
+
+});
+
+
