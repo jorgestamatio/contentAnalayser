@@ -1,16 +1,21 @@
 <div id='mainContainer' class='container'>
-	<!-- <div class='hero-unit'><h1><?php //echo COMPANY_NAME; ?></h1></div>	 -->
     
-
     <div id="search" class='container'>
-        <div class="row">
-            <form class="form-inline">
-                <input type="hidden" id='token' name='token' value='<?php echo $access_token; ?>'>
-                <input type="text" id='page' class="input span9" placeholder="facebook page e.g.: nzz, blick...">
-                <button id='getAnalysis' class="btn span3 btn-info pull-right">Get analysis!</button>
-            </form>
-        </div>
+        <form class="form-inline">
+            <input type="hidden" id='token' name='token' value='<?php echo $access_token; ?>'>
+            <input type="text" id='page' class="input span4" placeholder="facebook page e.g.: nzz, blick...">
+            <select id='days' class='input-small'>
+                <option value="2">2 days</option>
+                <option value="10">10 days</option>
+                <option value='20'>20 days</option>
+                <option value='30'>30 days</option>
+            </select>
+            <button id='getAnalysis' class="btn btn-info">Get analysis!</button>
+            <button id='getLink' class="btn btn-info">Get link!</button>
+        </form>
     </div>
+
+    <div class="link"></div>
     
     <div id='loading' class='hide'>
         <div class="overlay">
