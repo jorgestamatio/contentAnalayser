@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 date_default_timezone_set('Europe/Berlin');
 setlocale(LC_TIME, "fr_FR");
@@ -12,7 +12,7 @@ $csv = '';
 
 
 //$access_token = 'CAAHUqTfdENsBADqx4TBSCapATANfa1jkdvoZAWgfH1B4ZAcUGGXb5LE1U3RGfeZBcxVeythNb00qb3MHkoOmZCzxw92ChgkVGYwjChIAx6f5TfQNFUtA3vxQRv9ZAICfm5ZCaPTe1iiy2mYh6JjHaOwKnZCnLTt1ZAqdyVzUUbeyVwZDZD';
-        
+
 $graph_url = "https://graph.facebook.com/".$page."/posts?limit=10&access_token=". $access_token;
 
 
@@ -27,8 +27,8 @@ foreach($page_posts['data'] as $post){
     $result .= '<div class="well">';
 
     // Post variables /////////////////////////
-    $post_id = $post['id']; 
-    $link = $post['link']; 
+    $post_id = $post['id'];
+    $link = $post['link'];
     $message = $post['message'];
     $post_time = $post['updated_time'];
     $post_time = strtotime($post_time);
@@ -36,7 +36,7 @@ foreach($page_posts['data'] as $post){
     $post_hour = date("g:i a", $post_time);
     $object_id = $post['object_id'];
     $comments = $post['comments'];
-    $likes = $post['likes']; 
+    $likes = $post['likes'];
     $type = $post['type'];
     $result .= '<h2>'. $post_date .'</h2>';
     $result .= '<h4>'.$message.'</h4>';
@@ -48,11 +48,11 @@ foreach($page_posts['data'] as $post){
     $result .= '<h4>words: '.$message_words.'</h4>';
     $result .= '<h4>words: '.$message_characters.'</h4>';
     // END Post messsage /////////////////////////
-    // Mentions /////////////////////////    
+    // Mentions /////////////////////////
     if($post['to']){
         $post_mentions = $post['to'];
         foreach($post_mentions['data'] as $mention){
-            $mentions .= $mention['name'] . ' '; 
+            $mentions .= $mention['name'] . ' ';
         }
     }else{
         $mentions = 'none';
@@ -65,12 +65,12 @@ foreach($page_posts['data'] as $post){
     $result .= '<h4>likes: ' . $totalLikes . '</h4>';
     if($totalLikes > 0){
         foreach($likes['data'] as $like){
-            $name = $post['name'];
+        $name = $post['name'];
             //$result .= '<li>' . $name . ' said ' . $message . '</li>';
         }
-    }  
+    }
     // END Likes ///////////////////////////////////
-   
+
     // Shares //////////////////////////////////
     //
     //
@@ -78,10 +78,10 @@ foreach($page_posts['data'] as $post){
         $post_shares = $post['shares']['count'];
         $result .= '<h4>Post shares:' . $post_shares . '</h4>';
     }
-    // 
+    //
     //
     if($post['type'] == 'link'){
-        $sharesUrl = 'http://graph.facebook.com/?id='.$link; 
+        $sharesUrl = 'http://graph.facebook.com/?id='.$link;
         $link_shares = json_decode(file_get_contents($sharesUrl), true);
 
         $result .= '<h4>Link shares:' . $link_shares['shares'] . '</h4>';
@@ -95,13 +95,13 @@ foreach($page_posts['data'] as $post){
         foreach($comments['data'] as $comment){
             $name = $comment['from']['name'];
             $message = $comment['message'];
-            
-            
+
+
             $result .= '<li>' . $name . ' said ' . $message . '</li>';
         }
     $result .= '</ul>';
     }
-        
+
     // Comments //////////////////////////////
 
 
@@ -117,12 +117,12 @@ foreach($page_posts['data'] as $post){
 
 
     $result .= '</div>';
-}   
+}
 
 //functions
   function str_word_count_utf8($str) {
         return count(preg_split('~[^\p{L}\p{N}\']+~u',$str));
-    } 
+    }
 
 echo $result;
  ?>
