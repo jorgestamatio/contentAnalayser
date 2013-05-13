@@ -14,7 +14,7 @@ $(document).ready(new function() {
       queryDataType = '/posts/'
       queryParameters = '?fields=id,message,likes,comments,shares,type,caption,name&limit=50&date_format=U&access_token=';
 
-      
+
 // Capture filter click events.
 $('#getAnalysis').click(function(e){
   e.preventDefault();
@@ -30,7 +30,7 @@ $('#getAnalysis').click(function(e){
     getRange(days);
     getIds(url);
   }
-  
+
 
 });
 
@@ -47,7 +47,7 @@ $('#getLink').click(function(e){
     getRange(days);
     $('.link').html('<div class="well"><a href="'+url+'" target="_blank">'+url+'</a></div>')
   }
- 
+
 
 });
 
@@ -60,11 +60,11 @@ function getIds (url) {
     url,
     function(data) {
       parseIds(data);
-    }              
+    }
   );
 }
 
-     
+
 function parseIds(json){
   $.each(json.data, function(i, post){
     if(post.created_time > limitPast){
@@ -75,7 +75,7 @@ function parseIds(json){
       }
 
       if(post.type == 'photo'){
-        //nothing special 
+        //nothing special
       }
 
       postIds.push(post.id);
@@ -87,7 +87,7 @@ function parseIds(json){
     }
   });
 
-  
+
   if(hitLimit === false){
     var nextPage = json.paging.next;
     getIds(nextPage);
@@ -135,4 +135,6 @@ function done(){
 
 });
 
-
+FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});
