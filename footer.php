@@ -9,7 +9,9 @@
 <!-- //-beg- concat_js -->
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
+<script src="js/dates.js"></script>
 <script src="js/main.js"></script>
+<script src="js/graphs.js"></script>
 <!-- //-end- concat_js -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

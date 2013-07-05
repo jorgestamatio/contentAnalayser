@@ -50,6 +50,16 @@ h3.loadingText{
 }
 
 
+#likesGraph{
+	width: 500px;
+	height: 300px;
+	float: left;
+}
 
+#typesGraph{
+	width: 400px;
+	height: 300px;
+	float: right;
+}
 
 

@@ -13,7 +13,7 @@ $csv = '';
 
 //$access_token = 'CAAHUqTfdENsBADqx4TBSCapATANfa1jkdvoZAWgfH1B4ZAcUGGXb5LE1U3RGfeZBcxVeythNb00qb3MHkoOmZCzxw92ChgkVGYwjChIAx6f5TfQNFUtA3vxQRv9ZAICfm5ZCaPTe1iiy2mYh6JjHaOwKnZCnLTt1ZAqdyVzUUbeyVwZDZD';
 
-$graph_url = "https://graph.facebook.com/".$page."/posts?limit=10&access_token=". $access_token;
+$graph_url = "https://graph.facebook.com/".$page."/posts?limit=50&access_token=". $access_token;
 
 
 
